@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show All Articles</title>
+</head>
+<body>
+    <h1>Show All Articles</h1>
+    <p>Number of articles found is/are <%= articles.length %></p>
+    <!-- <div><%= articles %></div> -->
+    <% for(let i=0; i < articles.length; i++) { %>
+    <div style="background-color: orange;padding:10px">
+        <h1 style="color:blue; text-align: center;"><%= articles[i]["title"] %></h1>
+        <%- articles[i]["body"] %>
+        <!-- Note above line can read html coming from backend -->
+        <p style="color:red; text-align: center;">Number of Like(s): <%= articles[i]["numOfLikes"] %></p>
+    </div>
+    <hr>
+    <% } //end of for loop %>
+    <!-- Another way to express for loop -->
+    <% for(art of articles) { %>
+        <div style="background-color: rgb(21, 255, 0);padding:10px; margin: 10px 0;">
+        <h1 style="color:rgb(255, 47, 0); text-align: center;"><%= art.title %></h1>
+        <%- art.body %>
+        <!-- Note above line can read html coming from backend -->
+        <p style="color:red; text-align: center;">Number of Like(s): <%= art.numOfLikes %></p>
+    </div>
+    <% } //end of for loop %>
+</body>
+</html>

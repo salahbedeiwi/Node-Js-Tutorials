@@ -1,0 +1,121 @@
+<!--
+    Step #0
+        npm init
+
+    Step #1
+        Create express server to run your backend
+        npm install express
+        "dependencies": {
+            "express": "^4.18.2"
+        }
+    
+    Step #3
+        Create file name call node.js
+        const express = require("express");
+        var app = express();
+
+    Step #5
+        Create URL using HTTP Request Methods (Get, Post, Put/Patch, Delete, Options)
+
+    Step #6
+        Run my server or keep my server listen to users requests
+        like when they visit website/url or any url, it will keep running
+        => app.listen(port to run my site 3000 or any number, callback function () => {});
+            once createed: my web server is now listening to all user requests
+
+    Step #7
+        To see your app working, click on powershell and enter
+            node index.js 
+                    => this will only run one time, but any update or changes 
+                        to my site, you must ctl+c and re run step#7
+            Step #8
+                Close the listen before installing this:
+                    npx nodemon index.js
+                    => Better use this to keep your app listen to all updates/changes
+                        and runs automatically. index.js very much keep this file running
+
+    Step #8
+        Explaination
+        request type is get, path to my request is /contact & port
+        app.get("/contact", (req, res) => {});
+
+    step #9
+        Install EJS Package
+            -> this will ease pass parameters to html files to 
+                be rendered later.
+                to call file in node js
+                    -> req.sendFile(__dirname+ "/views/number.ejs")
+                note extension name for any html file changed to ejs not html
+
+        Also download EJS Lanaguage Support by Visual Studio Code
+        once loaded you can write your conditions and display data
+        in your ejs file
+        res.render("number.ejs", {
+            name: 'Salah Bedeiwi',
+            age: 35,
+            numbers: numbers
+        });
+        <%= name %>
+        <% if(name.length < 10 ){ %>
+            <p>Hello <%= name %></p>
+        <% } %>
+        <% } else { %>
+            <p>Your name is short :: => <%= name %></p>
+        <% } %>
+
+
+    Step #10
+            Using MOngoDB Database
+            Best to user with node js is MongoDB
+            Go to mongodb.com and create an account first
+            and we will also use "Atlas" service with mongo DB
+            This will help us use db easier and connect to db
+
+            Create DB and also create user name and password
+            pass: pMTO7kyrO67xSaox
+            username: bedei001
+
+    Step #11
+            Install mongoose on this project
+            to create and deal with mongodb
+            create tables, collections
+            npm install mongoose
+    Step #12
+            To connect to db
+            first must get the url from your db
+            click on connect and choose first option "Drivers"
+            mongodb+srv://bedei001:<password>@cluster0.o4uxcay.mongodb.net/?retryWrites=true&w=majority
+
+    Step #13
+        If you ever have an error like app crashes
+                when calling mongoose to connect to mongoDB
+                or while require("mongoose")
+                Make sure mongoose works with node v.16+
+                so reinstall node to latest version
+    Step #14
+        Create models folder
+        This will have all entities for my work
+
+        MVC (models, views, index.js)
+        MODELS: this will have all models - DB
+        VIEWS: MY HTML VERY MUCH
+        CONTROLLERS: index.js
+
+    Step #15
+        Deploy NOdE JS Project to could
+        1. The fastest way to host your code at render.com
+                render.com has free TLS Certificates, Global CDN ...
+
+        a. click on new -> web service -> build and deploy from GIT Repo.
+        2. open github desktop to add your project on it.
+        3. sign in github
+        4. click to add -> add existing repository
+        5. choose existing folder location
+        6. You will find you haven't created a repo.. so create one
+        7. while creating it.. keep NAME as it is... so no problems occur
+        8. click on GIT IGNORE and choose node
+        9. click on create repository
+
+
+
+-->

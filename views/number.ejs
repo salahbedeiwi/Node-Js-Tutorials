@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Numbers</title>
+</head>
+
+<body>
+    <h1>Hello <%= name %>!</h1>
+    <h2>You are <%= age %> years old!</h2>
+    <h3>We will show all numbers here to print!</h3>
+    <% if(age > 34) { %>
+        <p>Age is > 34</p>
+        <p style="background-color: orange;color:white; padding:10px; border-radius: 3px;">
+            <%= numbers %>
+        </p>
+    <% } else { %>
+        <p>Age is greater than 39</p>
+        <p style="background-color: blue;color:white; padding:10px; border-radius: 3px;">
+            <%= numbers %>
+        </p>
+    <% } %>
+    <%# THIS IS A COMMENT AND IT WILL NOT SHOW ON BROWSER %>
+</body>
+</html>
